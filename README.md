@@ -19,19 +19,21 @@ The profile card can be controlled with the following attributes:
 | Slot             | Description                                                                                                          |
 |------------------|----------------------------------------------------------------------------------------------------------------------|
 | `slot="image"`   | Placed at the top of the card, either full-width, or centered when `round`.                                          |
+| `slot="name"`    | Below the image, this must be a heading of the appropriate level, with or without a link.                            |
+| `slot="title"`   | A title or short description shown below the name.                                                                   |
 | `slot="address"` | Displayed using a map marker icon. This can be an address or some other form of location, such as a department name. |
 | `slot="phone"`   | Shown as a phone number with a phone icon.                                                                           |
 | `slot="email"`   | Shown as an email address with an email icon.                                                                        |
 
-All other content in the card is shown directly below the image, above the other slots.
+Any additional content without a specific slot is shown below the slotted content, at the bottom of the card.
 
 ## Code Examples
 
 ```html
 <ilw-profile-card>
     <img src="https://picsum.photos/320/200" alt="Photo of First Last in front of the Illini Union." slot="image">
-    <h2><a href="#">First & Last Name</a></h2>
-    <p>Job Title or Description</p>
+    <h2 slot="name"><a href="#">First & Last Name</a></h2>
+    <p slot="title">Job Title or Description</p>
     <div slot="address">
         <p>110A Education</p>
         <p>M/C 708</p>

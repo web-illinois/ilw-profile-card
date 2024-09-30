@@ -9,27 +9,39 @@
     <link rel="stylesheet" href="https://dev.toolkit.illinois.edu/ilw-global/3.0.0-alpha/ilw-global.css">
     <script type="module" src="/src/ilw-profile-card.js"></script>
     <style>
-        main {
-            max-width: 500px;
+        main.main {
             margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
         }
     </style>
 </head>
 
-<body style="margin: 0; padding: 0;">
-<main>
-<ilw-profile-card>
-    <img src="https://picsum.photos/320/200" alt="" slot="image">
-    <h2><a href="#">First & Last Name</a></h2>
-    <p>Job Title or Description</p>
-    <div slot="address">
-        <p>110A Education</p>
-        <p>M/C 708</p>
-    </div>
-    <p slot="department">Curriculum & Instruction</p>
-    <p slot="phone"><a href="#">217-333-0000</a></p>
-    <p slot="email "><a href="#">example@illinois.edu</a></p>
-</ilw-profile-card>
+<body style="">
+<main class="main">
+    <ilw-profile-card>
+        <img src="https://fastly.picsum.photos/id/1025/500/400.jpg?hmac=MPFZjsU2UG1Mr3SjMkYP2F9jnhQWyatt6soxbOj0TN4" alt="Photo of First Last in front of the Illini Union." slot="image">
+        <h2 slot="name"><a href="#">First & Last Name</a></h2>
+        <p slot="title">Job Title or Description</p>
+        <div slot="address">
+            <p>110A Education</p>
+            <p>M/C 708</p>
+        </div>
+        <p slot="phone"><a href="#">217-333-0000</a></p>
+        <p slot="email "><a href="#">example@illinois.edu</a></p>
+    </ilw-profile-card>
+    <ilw-profile-card aspectratio="1/1">
+        <img src="https://fastly.picsum.photos/id/1025/500/400.jpg?hmac=MPFZjsU2UG1Mr3SjMkYP2F9jnhQWyatt6soxbOj0TN4" alt="Photo of First Last in front of the Illini Union." slot="image">
+        <h2 slot="name"><a href="#">First & Last Name</a></h2>
+        <p slot="title">Job Title or Description</p>
+        <div slot="address">
+            <p>110A Education</p>
+            <p>M/C 708</p>
+        </div>
+        <p slot="phone"><a href="#">217-333-0000</a></p>
+        <p slot="email "><a href="#">example@illinois.edu</a></p>
+    </ilw-profile-card>
 </main>
 </body>
 

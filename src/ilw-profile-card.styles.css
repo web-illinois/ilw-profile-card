@@ -1,0 +1,19 @@
+:host {
+    display: block;
+}
+
+.profile-image {
+    width: 100%;
+
+    ::slotted(*) {
+        max-width: 100%;
+    }
+
+    &.aspect {
+        height: 100%;
+        ::slotted(*) {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
