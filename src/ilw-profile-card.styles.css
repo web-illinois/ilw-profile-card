@@ -1,12 +1,28 @@
+/* Styleable variables are in the base layer so they can be overridden easily */
+@layer base {
+    :host {
+        --ilw-profile-card--font: var(--il-font-sans); /*var: Font for the card content*/
+
+        --ilw-profile-card--heading-color: var(--il-blue); /*var: Color of the heading in the card*/
+        --ilw-profile-card--text-color: var(--ilw-text--color); /*var: Color of text in the card*/
+        --ilw-profile-card--heading--font-size: 1.5em; /*var: Size of headings inside the card*/
+
+        --ilw-profile-card--link: var(--il-industrial); /*var: Color for links inside the card */
+        --ilw-profile-card--link-focus: var(--ilw-link--focused-color); /*var: Focus and hover color for links inside the card*/
+        --ilw-profile-card--link-visited: var(--il-industrial); /*var: Visited link color for inside the card*/
+    }
+}
+
 :host {
     display: block;
+    font-family: var(--ilw-profile-card--font);
 }
 
 .profile-image {
     width: 100%;
 
     ::slotted(*) {
-        max-width: 100%;
+        width: 100%;
     }
 
     &.aspect {
@@ -15,5 +31,29 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.address, .phone, .email {
+    display: flex;
+    gap: 15px;
+
+    ::slotted(*) {
+        margin: 0;
+    }
+
+    ::slotted([slot=address]) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &.hidden {
+        display: none;
     }
 }

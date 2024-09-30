@@ -1,0 +1,28 @@
+ilw-profile-card {
+    a {
+        color: var(--ilw-profile-card--link);
+
+        &:focus {
+            color: var(--ilw-link--focus-color);
+            background-color: var(--ilw-link--focus-background-color);
+            outline: var(--ilw-link--focus-outline);
+        }
+
+        &:hover {
+            color: var(--ilw-profile-card--link-focus);
+        }
+    }
+
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6 {
+        color: var(--ilw-profile-card--heading-color);
+        font-size: var(--ilw-profile-card--heading--font-size);
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}

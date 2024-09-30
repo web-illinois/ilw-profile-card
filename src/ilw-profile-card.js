@@ -4,6 +4,7 @@ import { styleMap } from "lit/directives/style-map.js";
 import styles from './ilw-profile-card.styles.css?inline';
 import './ilw-profile-card.css';
 import "@illinois-toolkit/ilw-card";
+import "@illinois-toolkit/ilw-icon";
 
 class ProfileCard extends LitElement {
 
@@ -11,6 +12,7 @@ class ProfileCard extends LitElement {
         return {
             round: { type: Boolean },
             aspectratio: {},
+            theme: {},
             _hasAddress: { state: true, type: Boolean },
             _hasPhone: { state: true, type: Boolean },
             _hasEmail: { state: true, type: Boolean },
@@ -25,6 +27,7 @@ class ProfileCard extends LitElement {
         super();
         this.round = false;
         this.aspectratio = "";
+        this.theme = "white";
         this._hasAddress = false;
         this._hasPhone = false;
         this._hasEmail = false;
@@ -48,16 +51,28 @@ class ProfileCard extends LitElement {
             aspect: !!this.aspectratio
         }
         return html`
-            <ilw-card aspectRatio=${this.aspectratio ? this.aspectratio : nothing}>
+            <ilw-card aspectRatio=${this.aspectratio ? this.aspectratio : nothing}
+                      theme=${this.theme === "gray" ? "gray" : nothing}>
                 <div class=${classMap(imageClasses)} slot="image">
                     <slot name="image"></slot>
                 </div>
                 <slot name="name"></slot>
-                <slot name="title"></slot>
-                ${ this._hasAddress ? html`<div class="address"><slot name="address"></slot></div>` : '' }
-                ${ this._hasAddress ? html`<div class="phone"><slot name="phone"></slot></div>` : '' }
-                ${ this._hasAddress ? html`<div class="email"><slot name="email"></slot></div>` : '' }
-                <slot></slot>
+                <div class="content">
+                    <slot name="title"></slot>
+                    <div class="address ${this._hasAddress ? '' : 'hidden'}">
+                        <ilw-icon icon="location" size="1.5em"></ilw-icon>
+                        <slot name="address" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="phone ${this._hasPhone ? '' : 'hidden'}">
+                        <ilw-icon icon="phone" size="1.5em"></ilw-icon>
+                        <slot name="phone" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="email ${this._hasEmail ? '' : 'hidden'}">
+                        <ilw-icon icon="email" size="1.5em"></ilw-icon>
+                        <slot name="email" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <slot></slot>
+                </div>
             </ilw-card>
         `;
     }

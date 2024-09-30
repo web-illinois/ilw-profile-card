@@ -13,6 +13,7 @@ The profile card can be controlled with the following attributes:
 
 - `round` clips the image into a round shape.
 - The aspect ratio of the `image` slot can be forced using `aspectratio`, for example `aspectratio="3/2"`.
+- `theme` can be `white` (default) or `gray`.
 
 ### Slots
 
