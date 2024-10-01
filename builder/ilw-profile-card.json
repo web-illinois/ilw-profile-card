@@ -4,9 +4,9 @@
     "github": "https://github.com/web-illinois/ilw-profile-card/",
     "type": "web component",
     "element-name": "ilw-profile-card",
-    "description": "Description for builder.",
-    "purpose": "Imperative mood purpose for builder homepage.",
+    "description": "A card component built to show a profile card.",
+    "purpose": "Display a member profile with contact info.",
     "toolkit-version": "",
     "production-version": "",
-    "development-version": "1.0.0-alpha"
+    "development-version": "1.0-beta"
 }

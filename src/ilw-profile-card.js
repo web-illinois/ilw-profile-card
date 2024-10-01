@@ -1,6 +1,5 @@
 import {LitElement, html, unsafeCSS, nothing} from 'lit';
 import { classMap } from "lit/directives/class-map.js";
-import { styleMap } from "lit/directives/style-map.js";
 import styles from './ilw-profile-card.styles.css?inline';
 import './ilw-profile-card.css';
 import "@illinois-toolkit/ilw-card";
@@ -36,7 +35,6 @@ class ProfileCard extends LitElement {
      * @private
      */
     _slotsChanged() {
-        console.log("slotsChanged");
         let slots = this.shadowRoot.querySelectorAll("slot");
 
         let hasSlots = {};
@@ -89,33 +87,33 @@ class ProfileCard extends LitElement {
                     </div>
                     <div class="icon linkedin ${this._hasSlots.linkedin ? '' : 'hidden'}">
                         <div class="icon-wrap">
-                            <ilw-icon icon="linkedin" type="line" alt="LinkedIn" size="2.5em"></ilw-icon>
+                            <ilw-icon icon="linkedin" type="line" size="2.5em"></ilw-icon>
                         </div>
                         <slot name="linkedin" @slotchange=${this._slotsChanged}></slot>
                     </div>
                     <div class="icon x ${this._hasSlots.x ? '' : 'hidden'}">
                         <div class="icon-wrap">
-                            <ilw-icon icon="x" type="line" alt="X (Twitter)" size="1.7em"></ilw-icon>
+                            <ilw-icon icon="x" type="line" size="2.5em"></ilw-icon>
                         </div>
                         <slot name="x" @slotchange=${this._slotsChanged}></slot>
                     </div>
                     <div class="icon facebook ${this._hasSlots.facebook ? '' : 'hidden'}">
                         <div class="icon-wrap">
-                            <ilw-icon icon="facebook" type="line" alt="Facebook" size="1.7em"></ilw-icon>
+                            <ilw-icon icon="facebook" type="line" size="2.3em"></ilw-icon>
                         </div>
                         <slot name="facebook" @slotchange=${this._slotsChanged}></slot>
                     </div>
                     <div class="icon news ${this._hasSlots.news ? '' : 'hidden'}">
                         <div class="icon-wrap">
-                            <ilw-icon icon="news" alt="news" size="1.7em"></ilw-icon>
+                            <ilw-icon icon="news" size="1.7em"></ilw-icon>
                         </div>
                         <slot name="news" @slotchange=${this._slotsChanged}></slot>
                     </div>
-                    <div class="icon manager ${this._hasSlots.manager ? '' : 'hidden'}">
+                    <div class="icon manager ${this._hasSlots.hr ? '' : 'hidden'}">
                         <div class="icon-wrap">
                             <ilw-icon icon="hr" alt="HR" size="1.7em"></ilw-icon>
                         </div>
-                        <slot name="manager" @slotchange=${this._slotsChanged}></slot>
+                        <slot name="hr" @slotchange=${this._slotsChanged}></slot>
                     </div>
                     <slot></slot>
                 </div>

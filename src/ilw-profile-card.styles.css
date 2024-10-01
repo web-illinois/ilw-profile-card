@@ -65,7 +65,7 @@ ilw-card {
 .content {
     display: flex;
     flex-direction: column;
-    gap: 0.1em;
+    gap: 1em;
     color: var(--ilw-profile-card--text-color);
 
     ::slotted([slot=title]) {
@@ -94,7 +94,7 @@ ilw-card {
 
     .icon-wrap {
         width: 2.5em;
-        height: 2.5em;
+        height: 1.66em;
         display: flex;
         justify-content: center;
         align-items: center;

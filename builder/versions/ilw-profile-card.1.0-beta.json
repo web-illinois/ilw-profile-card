@@ -1,0 +1,111 @@
+{
+    "title": "Profile Card",
+    "tag": "ilw-profile-card",
+    "github": "https://github.com/web-illinois/ilw-profile-card/",
+    "type": "web component",
+    "element-name": "ilw-profile-card",
+    "description": "A card component built to show a profile card.",
+    "builder-version": "1.0-beta",
+    "version": "1.0.0-beta",
+    "date": "09/30/2024",
+    "css": "https://dev.toolkit.illinois.edu/ilw-profile-card/1.0.0-beta/ilw-profile-card.css",
+    "js": "https://dev.toolkit.illinois.edu/ilw-profile-card/1.0.0-beta/ilw-profile-card.js",
+    "production": false,
+    "notes": "",
+    "parent-style": "max-width: 350px; margin: 10px auto;",
+    "samples": [
+        {
+            "name": "default",
+            "description": "Default information",
+            "text": "<img src=\"https://fastly.picsum.photos/id/1025/500/400.jpg?hmac=MPFZjsU2UG1Mr3SjMkYP2F9jnhQWyatt6soxbOj0TN4\" alt=\"Photo of First Last in front of the Illini Union.\" slot=\"image\">\n<h2 slot=\"name\">First & Last Name</h2>\n<p slot=\"title\">Job Title or Description</p>\n<p slot=\"address\">\n    <span>110A Education</span>\n    <span>M/C 708</span>\n</p>\n<p slot=\"phone\"><a href=\"#\">217-333-0000</a></p>\n<p slot=\"email\"><a href=\"#\">example@illinois.edu</a></p>"
+        },
+        {
+            "name": "all",
+            "description": "All slots",
+            "text": "<img src=\"https://fastly.picsum.photos/id/1025/500/400.jpg?hmac=MPFZjsU2UG1Mr3SjMkYP2F9jnhQWyatt6soxbOj0TN4\" alt=\"Photo of First Last in front of the Illini Union.\" slot=\"image\">\n<h2 slot=\"name\">First & Last Name</h2>\n<p slot=\"title\">Job Title or Description</p>\n<p slot=\"address\">\n    <span>110A Education</span>\n    <span>M/C 708</span>\n    <span>M/C 708</span>\n    <span>M/C 708</span>\n</p>\n<p slot=\"phone\"><a href=\"#\">217-333-0000</a></p>\n<p slot=\"email\"><a href=\"#\">example@illinois.edu</a></p>\n<p slot=\"hours\">M-F 8:00 AM-4:30 PM In Office</p>\n<p slot=\"linkedin\"><a href=\"#\">LinkedIn</a></p>\n<p slot=\"x\"><a href=\"#\">X (Twitter)</a></p>\n<p slot=\"facebook\"><a href=\"#\">Facebook</a></p>\n<p slot=\"news\"><a href=\"#\">Related News</a></p>\n<p slot=\"hr\"><a href=\"#\">Manager: Last Name, First Name</a></p>"
+        }
+    ],
+    "attributes-fixed": [],
+    "attributes-text": [],
+    "attributes": [
+        {
+            "name": "theme",
+            "description": "Color theme used",
+            "depreciated": false,
+            "values": [
+                "",
+                "gray"
+            ]
+        },
+        {
+            "name": "round",
+            "description": "Make the profile image round",
+            "depreciated": false,
+            "values": [
+                "",
+                "true"
+            ]
+        },
+        {
+            "name": "aspectratio",
+            "description": "Force image aspect ratio",
+            "depreciated": false,
+            "values": [
+                "",
+                "1/1",
+                "2/1",
+                "16/10",
+                "10/16"
+            ]
+        }
+    ],
+    "classes-fixed": [],
+    "classes": [],
+    "css-variables": [
+        {
+            "name": "--ilw-profile-card--font",
+            "depreciated": false,
+            "description": "Font for the card content [default: var(--il-font-sans)]"
+        },
+        {
+            "name": "--ilw-profile-card--heading-color",
+            "depreciated": false,
+            "description": "Color of the heading in the card [default: var(--il-blue)]"
+        },
+        {
+            "name": "--ilw-profile-card--text-color",
+            "depreciated": false,
+            "description": "Color of text in the card [default: var(--ilw-text--color)]"
+        },
+        {
+            "name": "--ilw-profile-card--heading--font-size",
+            "depreciated": false,
+            "description": "Size of headings inside the card [default: 1.5em]"
+        },
+        {
+            "name": "--ilw-profile-card--title--font-size",
+            "depreciated": false,
+            "description": "Size of the title below the name [default: 1.1em]"
+        },
+        {
+            "name": "--ilw-profile-card--link",
+            "depreciated": false,
+            "description": "Color for links inside the card  [default: var(--il-industrial)]"
+        },
+        {
+            "name": "--ilw-profile-card--link-focus",
+            "depreciated": false,
+            "description": "Focus and hover color for links inside the card [default: var(--ilw-link--focused-color)]"
+        },
+        {
+            "name": "--ilw-profile-card--link-visited",
+            "depreciated": false,
+            "description": "Visited link color for inside the card [default: var(--il-industrial)]"
+        },
+        {
+            "name": "--ilw-profile-card--border-bottom",
+            "depreciated": false,
+            "description": "Bottom border for the card [default: 4px solid var(--il-blue)]"
+        }
+    ]
+}
