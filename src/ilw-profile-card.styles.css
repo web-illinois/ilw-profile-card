@@ -3,19 +3,34 @@
     :host {
         --ilw-profile-card--font: var(--il-font-sans); /*var: Font for the card content*/
 
+        --ilw-profile-card--font-size: 1rem;
         --ilw-profile-card--heading-color: var(--il-blue); /*var: Color of the heading in the card*/
         --ilw-profile-card--text-color: var(--ilw-text--color); /*var: Color of text in the card*/
         --ilw-profile-card--heading--font-size: 1.5em; /*var: Size of headings inside the card*/
+        --ilw-profile-card--title--font-size: 1.1em; /*var: Size of the title below the name*/
 
         --ilw-profile-card--link: var(--il-industrial); /*var: Color for links inside the card */
         --ilw-profile-card--link-focus: var(--ilw-link--focused-color); /*var: Focus and hover color for links inside the card*/
         --ilw-profile-card--link-visited: var(--il-industrial); /*var: Visited link color for inside the card*/
+
+        --ilw-profile-card--border-bottom: 4px solid var(--il-blue); /*var: Bottom border for the card*/
+        --ilw-profile-card--round-image-padding: 20px 50px 10px;
+
+        ilw-card {
+            --ilw-card--content-padding-top: 1rem;
+            --ilw-card--font-size: var(--ilw-profile-card--font-size);
+        }
     }
 }
 
 :host {
     display: block;
     font-family: var(--ilw-profile-card--font);
+    font-size: var(--ilw-profile-card--font-size);
+}
+
+ilw-card {
+    border-bottom: var(--ilw-profile-card--border-bottom);
 }
 
 .profile-image {
@@ -27,6 +42,7 @@
 
     &.aspect {
         height: 100%;
+
         ::slotted(*) {
             height: 100%;
             object-fit: cover;
@@ -34,15 +50,34 @@
     }
 }
 
+.profile-image.round {
+    padding: var(--ilw-profile-card--round-image-padding);
+    box-sizing: border-box;
+    ::slotted(*) {
+        border-radius: 50%;
+        clip-path: border-box;
+        aspect-ratio: 1/1;
+        display: block;
+        object-fit: cover;
+    }
+}
+
 .content {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 0.1em;
+    color: var(--ilw-profile-card--text-color);
+
+    ::slotted([slot=title]) {
+        margin: 0 0 0.3em;
+        font-size: var(--ilw-profile-card--title--font-size);
+    }
 }
 
-.address, .phone, .email {
+.icon {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 1em;
 
     ::slotted(*) {
         margin: 0;
@@ -55,5 +90,20 @@
 
     &.hidden {
         display: none;
+    }
+
+    .icon-wrap {
+        width: 2.5em;
+        height: 2.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-start;
+        margin-left: -5px;
+        margin-top: 2px;
+        margin-bottom: -2px;
+    }
+
+    ilw-icon {
     }
 }

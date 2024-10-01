@@ -13,9 +13,7 @@ class ProfileCard extends LitElement {
             round: { type: Boolean },
             aspectratio: {},
             theme: {},
-            _hasAddress: { state: true, type: Boolean },
-            _hasPhone: { state: true, type: Boolean },
-            _hasEmail: { state: true, type: Boolean },
+            _hasSlots: { state: true, type: Object },
         };
     }
 
@@ -28,9 +26,7 @@ class ProfileCard extends LitElement {
         this.round = false;
         this.aspectratio = "";
         this.theme = "white";
-        this._hasAddress = false;
-        this._hasPhone = false;
-        this._hasEmail = false;
+        this._hasSlots = {};
     }
 
     /**
@@ -40,14 +36,22 @@ class ProfileCard extends LitElement {
      * @private
      */
     _slotsChanged() {
-        this._hasAddress = this.shadowRoot.querySelector("slot[name=address]").assignedElements().length > 0;
-        this._hasPhone = this.shadowRoot.querySelector("slot[name=phone]").assignedElements().length > 0;
-        this._hasEmail = this.shadowRoot.querySelector("slot[name=email]").assignedElements().length > 0;
+        console.log("slotsChanged");
+        let slots = this.shadowRoot.querySelectorAll("slot");
+
+        let hasSlots = {};
+        for (let slot of slots) {
+            if (slot.name && slot.assignedElements().length > 0) {
+                hasSlots[slot.name] = true;
+            }
+        }
+        this._hasSlots = hasSlots;
     }
 
     render() {
         let imageClasses = {
             "profile-image": true,
+            round: this.round,
             aspect: !!this.aspectratio
         }
         return html`
@@ -56,20 +60,62 @@ class ProfileCard extends LitElement {
                 <div class=${classMap(imageClasses)} slot="image">
                     <slot name="image"></slot>
                 </div>
-                <slot name="name"></slot>
                 <div class="content">
+                    <slot name="name"></slot>
                     <slot name="title"></slot>
-                    <div class="address ${this._hasAddress ? '' : 'hidden'}">
-                        <ilw-icon icon="location" size="1.5em"></ilw-icon>
+                    <div class="icon address ${this._hasSlots.address ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="location" alt="address" size="1.7em"></ilw-icon>
+                        </div>
                         <slot name="address" @slotchange=${this._slotsChanged}></slot>
                     </div>
-                    <div class="phone ${this._hasPhone ? '' : 'hidden'}">
-                        <ilw-icon icon="phone" size="1.5em"></ilw-icon>
+                    <div class="icon phone ${this._hasSlots.phone ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="phone" alt="phone" size="1.7em"></ilw-icon>
+                        </div>
                         <slot name="phone" @slotchange=${this._slotsChanged}></slot>
                     </div>
-                    <div class="email ${this._hasEmail ? '' : 'hidden'}">
-                        <ilw-icon icon="email" size="1.5em"></ilw-icon>
+                    <div class="icon email ${this._hasSlots.email ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="email" alt="email" size="2em"></ilw-icon>
+                        </div>
                         <slot name="email" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="icon hours ${this._hasSlots.hours ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="hours" alt="hours" size="1.7em"></ilw-icon>
+                        </div>
+                        <slot name="hours" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="icon linkedin ${this._hasSlots.linkedin ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="linkedin" type="line" alt="LinkedIn" size="2.5em"></ilw-icon>
+                        </div>
+                        <slot name="linkedin" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="icon x ${this._hasSlots.x ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="x" type="line" alt="X (Twitter)" size="1.7em"></ilw-icon>
+                        </div>
+                        <slot name="x" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="icon facebook ${this._hasSlots.facebook ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="facebook" type="line" alt="Facebook" size="1.7em"></ilw-icon>
+                        </div>
+                        <slot name="facebook" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="icon news ${this._hasSlots.news ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="news" alt="news" size="1.7em"></ilw-icon>
+                        </div>
+                        <slot name="news" @slotchange=${this._slotsChanged}></slot>
+                    </div>
+                    <div class="icon manager ${this._hasSlots.manager ? '' : 'hidden'}">
+                        <div class="icon-wrap">
+                            <ilw-icon icon="hr" alt="HR" size="1.7em"></ilw-icon>
+                        </div>
+                        <slot name="manager" @slotchange=${this._slotsChanged}></slot>
                     </div>
                     <slot></slot>
                 </div>
