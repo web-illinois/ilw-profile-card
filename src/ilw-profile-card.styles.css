@@ -4,14 +4,10 @@
         --ilw-profile-card--font: var(--il-font-sans); /*var: Font for the card content*/
 
         --ilw-profile-card--font-size: 1rem;
-        --ilw-profile-card--heading-color: var(--il-blue); /*var: Color of the heading in the card*/
-        --ilw-profile-card--text-color: var(--ilw-text--color); /*var: Color of text in the card*/
+        --ilw-profile-card--heading-color: var(--ilw-color--heading); /*var: Color of the heading in the card*/
+        --ilw-profile-card--text-color: var(--ilw-color--text); /*var: Color of text in the card*/
         --ilw-profile-card--heading--font-size: 1.5em; /*var: Size of headings inside the card*/
         --ilw-profile-card--title--font-size: 1.1em; /*var: Size of the title below the name*/
-
-        --ilw-profile-card--link: var(--il-industrial); /*var: Color for links inside the card */
-        --ilw-profile-card--link-focus: var(--ilw-link--focused-color); /*var: Focus and hover color for links inside the card*/
-        --ilw-profile-card--link-visited: var(--il-industrial); /*var: Visited link color for inside the card*/
 
         --ilw-profile-card--border-bottom: 4px solid var(--il-blue); /*var: Bottom border for the card*/
         --ilw-profile-card--round-image-padding: 20px 50px 10px;
