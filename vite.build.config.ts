@@ -6,9 +6,9 @@ export default defineConfig({
     build: {
         outDir: "../dist/cdn",
         lib: {
-            name: "ilw-icon-panel",
-            entry: "ilw-icon-panel.ts",
-            fileName: "ilw-icon-panel",
+            name: "ilw-profile-card",
+            entry: "ilw-profile-card.ts",
+            fileName: "ilw-profile-card",
             formats: ["es"],
         },
     },
