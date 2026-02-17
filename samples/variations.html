@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Card Component</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.brand.illinois.edu/illinois.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://dev.toolkit.illinois.edu/ilw-global/latest/ilw-global.css"
+        />
+        <script type="module" src="../src/ilw-profile-card.ts"></script>
+    </head>
+    <style>
+        body {
+            padding: 15px;
+            font-size: 16px;
+            font-family: var(--il-font-sans);
+            background: #f4f4f4;
+        }
+    </style>
+    <body>
+        <h1>Card Component</h1>
+
+        <div id="grid">
+            <ilw-profile-card id="basic">
+                <img src="https://fastly.picsum.photos/id/1025/500/400.jpg?hmac=MPFZjsU2UG1Mr3SjMkYP2F9jnhQWyatt6soxbOj0TN4" alt="Photo of First Last in front of the Illini Union." slot="image">
+                <h2 slot="name">First & Last Name</h2>
+                <p slot="title">Job Title or Description</p>
+                <p slot="address">
+                    <span>110A Education</span>
+                    <span>M/C 708</span>
+                </p>
+                <p slot="phone"><a href="#">217-333-0000</a></p>
+                <p slot="email"><a href="#">example@illinois.edu</a></p>
+            </ilw-profile-card>
+            <ilw-profile-card id="everything">
+                <img src="https://fastly.picsum.photos/id/1025/500/400.jpg?hmac=MPFZjsU2UG1Mr3SjMkYP2F9jnhQWyatt6soxbOj0TN4" alt="Photo of First Last in front of the Illini Union." slot="image">
+                <h2 slot="name">First & Last Name</h2>
+                <p slot="title">Job Title or Description</p>
+                <p slot="address">
+                    <span>110A Education</span>
+                    <span>M/C 708</span>
+                    <span>M/C 708</span>
+                    <span>M/C 708</span>
+                </p>
+                <p slot="phone"><a href="#">217-333-0000</a></p>
+                <p slot="email"><a href="#">example@illinois.edu</a></p>
+                <p slot="hours">M-F 8:00 AM-4:30 PM In Office</p>
+                <p slot="linkedin"><a href="#">LinkedIn</a></p>
+                <p slot="x"><a href="#">X (Twitter)</a></p>
+                <p slot="facebook"><a href="#">Facebook</a></p>
+                <p slot="news"><a href="#">Related News</a></p>
+                <p slot="hr"><a href="#">Manager: Last Name, First Name</a></p>
+            </ilw-profile-card>
+        </div>
+
+        <script type="module">
+            import { createVariations } from "@illinois-toolkit/ilw-core";
+            import IconPanel from "../src/ilw-profile-card.js";
+
+            createVariations(
+                document.getElementById("grid"),
+                IconPanel,
+                {
+                    theme: [
+                        "white",
+                        "gray",
+                        "orange",
+                        "blue",
+                        "orange-gradient",
+                        "blue-gradient",
+                    ],
+                    round: [undefined, true],
+                    aspectratio: [undefined, "4/3", "16/9"],
+                    "data-simulated-hover": [undefined, "true"],
+                    "data-simulated-focus": [undefined, "true"],
+                },
+                ["basic", "everything"],
+            );
+        </script>
+    </body>
+</html>

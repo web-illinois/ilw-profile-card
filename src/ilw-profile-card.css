@@ -1,15 +1,15 @@
 ilw-profile-card {
     a {
-        color: var(--ilw-profile-card--link);
+        color: var(--ilw-color--link);
 
         &:focus {
-            color: var(--ilw-link--focus-color);
-            background-color: var(--ilw-link--focus-background-color);
-            outline: var(--ilw-link--focus-outline);
+            color: var(--ilw-color--focus--text);
+            background-color: var(--ilw-color--focus--background);
+            outline: var(--ilw-color--focus--outline);
         }
 
         &:hover {
-            color: var(--ilw-profile-card--link-focus);
+            color: var(--ilw-color--focus--text);
         }
     }
 
