@@ -27,6 +27,7 @@
 
 ilw-card {
     border-bottom: var(--ilw-profile-card--border-bottom);
+    height: 100%;
 }
 
 .profile-image {
